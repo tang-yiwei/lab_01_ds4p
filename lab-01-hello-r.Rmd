@@ -41,7 +41,7 @@ It is important to visualize the data before analyzing it statistically. In this
 
 ### Exercise 3
 
-Here, I plotted the star dataset and calculated the correlation coefficient of the x and y in star.
+Here, I plotted the star dataset and calculated the correlation coefficient between x and y in star.
 
 ```{r plot-star}
 star_data <- datasaurus_dozen %>%
@@ -59,14 +59,19 @@ Similar to the dino dataset, the x and y of star are used to plot a representati
 
 ### Exercise 4
 
-Add your code and narrative to complete this exercise. Use the conventions from the previous exercises to name your chunks and organize your work.
+Here, I plotted the dataset circle and calculated the correlation coefficient between x and y in circle.
 
-```{r}
+```{r plot-circle}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
 ```{r}
-
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
 
 ### Exercise 5
